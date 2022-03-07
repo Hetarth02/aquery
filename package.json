@@ -23,5 +23,5 @@
     "start:dev": "sirv public --dev"
   },
   "keywords": [],
-  "description": "A hobby project of mine to learn Svelte. Feel free to provide feedback. Project will be on Github soon."
+  "description": "A small project of mine to get me familiar with Svelte as a frontend technology."
 }
