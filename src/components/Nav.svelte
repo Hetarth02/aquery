@@ -3,7 +3,6 @@
   import { user_data } from "../stores.js";
   let is_logged;
   let user;
-  let toggle = false;
 
   user_data.subscribe(value => {
     user = value;
@@ -32,11 +31,8 @@
 
   .large-device {
     display: block;
-    background-color: #0073bc;
-  }
-
-  .small-device {
-    display: none;
+    background-color: burlywood;
+    background-image: radial-gradient(circle at 0 2%, #283e63cc, burlywood 99%);
   }
 
   .nav {
@@ -49,124 +45,32 @@
   .nav a {
     color: black;
     font-size: 2ch;
-    padding: 0.8rem;
+    padding: 0.7rem;
     text-decoration: none;
-    transition: ease 300ms;
+    border-bottom: 2px solid transparent;
   }
 
   .nav a:hover,
   .nav a:focus {
     outline: none;
-    background-color: #80d0c7;
-  }
-
-  @media (max-width: 800px) {
-    .large-device {
-      display: none;
-    }
-
-    .small-device {
-      display: block;
-      background-color: deepskyblue;
-    }
-
-    .small-device .nav {
-      width: 100%;
-      display: flex;
-      position: relative;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .small-device .nav a {
-      color: black;
-      font-size: 2ch;
-      padding: 0.8rem;
-      text-decoration: none;
-      transition: ease 300ms;
-    }
-
-    .small-device .nav a:hover,
-    .small-device .nav a:focus {
-      outline: none;
-      font-size: 2.2ch;
-      color: aliceblue;
-      background-color: transparent;
-    }
-
-    .small-device button {
-      border: none;
-      font-size: 2ch;
-      padding: 0.8rem;
-      background: transparent;
-    }
-
-    .small-device button:hover,
-    .small-device button:focus {
-      outline: none;
-      cursor: pointer;
-      color: aliceblue;
-    }
-
-    .menu-cont {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .menu-cont a {
-      color: black;
-      font-size: 2ch;
-      padding: 0.8rem;
-      text-decoration: none;
-      text-decoration: none;
-      transition: ease 300ms;
-    }
-
-    .menu-cont a:hover,
-    .menu-cont a:focus {
-      outline: none;
-      font-size: 2.1ch;
-      color: aliceblue;
-    }
+    color: white;
+    border-bottom: 2px solid white;
   }
 </style>
 
 <nav class="large-device">
   <div class="nav">
-    <a href="/" use:link>Home</a>
+    <a href="/" use:link><i class="bi bi-house-door"></i> Home</a>
     {#if is_logged}
-        <a href="/profile/{user}" use:link>Profile</a>
+        <a href="/profile/{user}" use:link><i class="bi bi-person-circle"></i> Profile</a>
     {/if}
-    <a href="/educorner" use:link>Educorner</a>
-    <a href="/market" use:link>Market</a>
-    <a href="/about" use:link>About</a>
+    <a href="/educorner" use:link><i class="bi bi-bank"></i> Educorner</a>
+    <a href="/market" use:link><i class="bi bi-graph-up-arrow"></i> Market</a>
+    <a href="/about" use:link><i class="bi bi-chat-left-heart"></i> About</a>
     {#if is_logged}
-      <a href="/logout" use:link={{disabled: true}} on:click={logged_out}>Logout</a>
+      <a href="/logout" use:link={{disabled: true}} on:click={logged_out}><i class="bi bi-door-closed"></i>Logout</a>
     {:else}
-      <a href="/login" use:link>Login</a>
+      <a href="/login" use:link><i class="bi bi-door-open"></i>Login</a>
     {/if}
   </div>
-</nav>
-
-<nav class="small-device">
-  <div class="nav">
-    <a href="/" use:link>Home</a>
-    <button on:click|preventDefault={() => toggle = !toggle}>Menu</button>
-  </div>
-  {#if toggle}
-    <div class="menu-cont">
-      {#if is_logged}
-        <a href="/profile/{user}" use:link>Profile</a>
-      {/if}
-      <a href="/educorner" use:link>Educorner</a>
-      <a href="/market" use:link>Market</a>
-      <a href="/about" use:link>About</a>
-      {#if is_logged}
-        <a href="/logout" use:link={{disabled: true}} on:click={logged_out}>Logout</a>
-      {:else}
-        <a href="/login" use:link>Login</a>
-      {/if}
-    </div>
-  {/if}
 </nav>
