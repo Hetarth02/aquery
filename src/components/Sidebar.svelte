@@ -8,52 +8,83 @@
 </script>
 
 <style>
-  div {
+  .flex-contents {
     width: 20%;
-    margin: 1rem;
-    background-color: black;
   }
 
-  .side-bar {
+  .sort-cont {
     top: 0;
     gap: 1rem;
-    width: 100%;
-    height: auto;
     display: flex;
     padding: 1rem;
-    margin: 0 auto;
+    color: white;
     position: sticky;
-    color: burlywood;
-    align-items: center;
-    align-self: flex-start;
+    margin: 1rem 0.5rem;
     flex-direction: column;
   }
 
-  .side-bar button {
-    border: none;
-    font-size: 2ch;
-    padding: 0.4rem;
-    color: burlywood;
+  .sort-btn {
+    padding: 0.6rem;
+    font-size: 1.6ch;
     text-align: center;
+    border-radius: 1rem;
     transition: ease 0.5s;
-    text-decoration: none;
     background: transparent;
+    background-color: white;
+    color: rgba(120, 144, 156);
+    border: 1px solid rgb(50, 138, 241);
   }
 
-  .side-bar button:hover,
-  .side-bar button:focus {
+  .sort-btn:hover,
+  .sort-btn:focus {
     outline: none;
-    font-size: 2.6ch;
+    color: black;
+    background-color: rgb(236, 243, 252);
+    border: 1px solid rgb(108, 178, 235);
+  }
+
+  .forum-btn {
+    width: 100%;
+    color: white;
+    padding: 0.6rem;
+    font-size: 1.8ch;
+    font-weight: bold;
+    border-radius: 1rem;
+    transition: ease 500ms;
+    background-color: rgb(50, 138, 241);
+    border: 1px solid rgb(50, 138, 241);
+    box-shadow: 0 0 15px rgb(50 138 241 / 45%);
+  }
+
+  .forum-btn i {
+    top: 1.7px;
+    font-size: 2.1ch;
+    position: relative;
+    margin-right: 0.2rem;
+  }
+
+  .forum-btn:hover,
+  .forum-btn:focus {
+    outline: none;
+    border-color: rgb(50, 138, 241);
+    background-color: rgb(39, 121, 189);
+    box-shadow: 0 0 20px rgb(0 117 255 / 45%);
   }
 </style>
 
-<div>
-  <div class="side-bar">
-    <!-- Check if user logged in then only let them create forum -->
-    <button>Create Forum</button>
-    <h3>Sort by:</h3>
-    <button on:click={() => data.set(sdata.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()))}>Latest</button>
-    <button on:click={() => data.set(sdata.sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime()))}>Oldest</button>
-    <button on:click={() => data.set(sdata.sort((a, b) => b.members - a.members))}>Popular</button>
+<div class="flex-contents">
+  <div class="sort-cont">
+    <button class="forum-btn">
+      <i class="bi bi-blockquote-left"></i> New Thread
+    </button>
+    <button class="sort-btn" on:click={() => data.set(sdata.sort((a, b) => b.members - a.members))}>
+      <i class="bi bi-stars"></i> Popular Threads
+    </button>
+    <button class="sort-btn" on:click={() => data.set(sdata.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()))}>
+      <i class="bi bi-layer-backward"></i> Latest Threads
+    </button>
+    <button class="sort-btn" on:click={() => data.set(sdata.sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime()))}>
+      <i class="bi bi-layer-forward"></i> Old Threads
+    </button>
   </div>
 </div>

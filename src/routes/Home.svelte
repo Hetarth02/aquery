@@ -5,10 +5,10 @@
 </script>
 
 <style>
-  div {
+  .cont {
+    gap: 1rem;
     display: flex;
-    margin: 1rem 0 0 1rem;
-    flex-direction: row-reverse;
+    margin: 1rem 0;
   }
 
   @media (max-width: 500px) {
@@ -19,7 +19,7 @@
 </style>
 
 <Nav />
-<div>
-  <Sidebar />
+<div class="cont">
   <Container />
+  <Sidebar />
 </div>

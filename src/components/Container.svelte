@@ -8,22 +8,18 @@
 </script>
 
 <style>
-  div {
+  .forum-cont {
     gap: 1rem;
     width: 80%;
     display: flex;
-    margin: 1rem 0;
+    padding: 1rem;
     flex-wrap: wrap;
-  }
-
-  @media (max-width: 500px) {
-    div {
-      margin: 2rem;
-    }
+    align-items: center;
+    justify-content: flex-start;
   }
 </style>
 
-<div>
+<div class="forum-cont">
   {#each stored_data as fdata}
     <Forum forum_data={fdata} />
   {/each}

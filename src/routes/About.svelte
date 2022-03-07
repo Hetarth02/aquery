@@ -9,7 +9,6 @@
 
 	.wrapper {
 	  width: 100%;
-	  background-image: linear-gradient(315deg, #f6d365 0%, #fda085 100%);
 	}
 
 	.content {
@@ -139,7 +138,7 @@
 		</div>
 		<h1 class="contribution">Contributing to the Journey!</h1>
 		<p class="desc">
-			Found a Bug &#128030;, Something you want to improve, Feature suggestion or that annoying spelling error that you  spotted! Well, feel free to raise an Issue on <a href="/">Github</a>.
+			Found a Bug &#128030;, Something you want to improve, Feature suggestion or that annoying spelling error that you  spotted! Well, feel free to raise an Issue on <a href="https://github.com/Hetarth02/aquery">Github</a>.
 		</p>
 	</div>
 </div>

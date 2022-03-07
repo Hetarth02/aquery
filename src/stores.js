@@ -80,5 +80,14 @@ export let data = writable([
     members: 100,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed facilis asperiores, qui etus."
+  },
+  {
+    forum_id: 4,
+    title: "Title4",
+    author: "Aquery4",
+    created_at: "2022-08-01",
+    members: 100,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed facilis asperiores, qui etus."
   }
 ]);
