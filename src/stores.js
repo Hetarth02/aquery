@@ -1,11 +1,13 @@
 import { writable } from "svelte/store";
 
+// Persistent stores using Session Storage
 export let user_data = writable({
   name: sessionStorage.getItem("name"),
   password: sessionStorage.getItem("password"),
   is_logged: sessionStorage.getItem("is_logged")
 });
 
+// Dummy Data
 export let data = writable([
   {
     forum_id: 1,

@@ -17,7 +17,7 @@
   }
 
   .flex-contents {
-    width: 20%;
+    width: 25%;
   }
 
   .new-thread-cont,
@@ -78,6 +78,34 @@
     color: rgb(50, 138, 241);
     background-color: rgb(236, 243, 252);
     border: 1px solid rgb(108, 178, 235);
+  }
+
+  .forum-content {
+    color: black;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    margin: 0 0 0 0.3rem;
+    background-color: white;
+    border: 1px solid #d3d3d3;
+  }
+
+  .forum-content p {
+    margin-bottom: 0.6rem;
+  }
+
+  .title-cont {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3rem;
+    justify-content: space-between;
+  }
+
+  .title-cont h1 {
+    font-size: 2.8ch;
+  }
+
+  .title-cont small {
+    font-size: 1.9ch;
   }
 
   .thread {
@@ -156,14 +184,34 @@
     font-size: 1.9ch;
     background: none;
   }
+
+  .flex-thread-cont {
+    width: 20%;
+  }
 </style>
 
 <Nav />
 <div class="cont">
   <div class="flex-contents">
-    <div class="new-thread-cont">
-      <button class="thread-btn">
-        <i class="bi bi-blockquote-left"></i> New Thread
+    <div class="forum-content">
+      <div class="title-cont">
+        <h1>Title</h1>
+        <small><i class="bi bi-people-fill"></i> 100</small>
+      </div>
+      <h5>By Aquery</h5>
+      <p>01/01/2022</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit officiis pariatur et
+        in possimus est!
+      </p>
+    </div>
+    <div class="sort-cont">
+      <button class="sort-btn"><i class="bi bi-stars"></i> Popular Threads</button>
+      <button class="sort-btn">
+        <i class="bi bi-layer-backward"></i> Latest Threads
+      </button>
+      <button class="sort-btn">
+        <i class="bi bi-layer-forward"></i> Old Threads
       </button>
     </div>
   </div>
@@ -211,14 +259,10 @@
       </a>
     {/each}
   </div>
-  <div class="flex-contents">
-    <div class="sort-cont">
-      <button class="sort-btn"><i class="bi bi-stars"></i> Popular Threads</button>
-      <button class="sort-btn">
-        <i class="bi bi-layer-backward"></i> Latest Threads
-      </button>
-      <button class="sort-btn">
-        <i class="bi bi-layer-forward"></i> Old Threads
+  <div class="flex-contents flex-thread-cont">
+    <div class="new-thread-cont">
+      <button class="thread-btn">
+        <i class="bi bi-blockquote-left"></i> New Thread
       </button>
     </div>
   </div>
