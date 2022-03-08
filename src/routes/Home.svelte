@@ -5,6 +5,7 @@
   import NewButton from "../components/NewButton.svelte";
   import Container from "../components/Container.svelte";
   import SortButton from "../components/SortButton.svelte";
+  import Modal, { openModal } from "../components/Modal.svelte";
 
   let sdata;
 
@@ -25,7 +26,7 @@
 <div class="cont">
   <Container />
   <Sidebar>
-    <NewButton>
+    <NewButton func={openModal}>
       <i class="bi bi-blockquote-left"></i> New Forum
     </NewButton>
     <SortButton func={() => data.set(sdata.sort((a, b) => b.members - a.members))}>
@@ -39,3 +40,6 @@
     </SortButton>
   </Sidebar>
 </div>
+<Modal>
+  <p>Create Forum Form</p>
+</Modal>

@@ -1,4 +1,5 @@
 <script>
+  import { link } from "svelte-spa-router";
   import Nav from "../components/Nav.svelte";
 </script>
 
@@ -32,5 +33,5 @@
 <Nav />
 <div>
   <p>404</p>
-  <a href="/#">Not found, Back to Home</a>
+  <a href="/" use:link>Not found, Back to Home</a>
 </div>

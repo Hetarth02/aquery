@@ -5,6 +5,7 @@
   import Sidebar from "../components/Sidebar.svelte";
   import NewButton from "../components/NewButton.svelte";
   import SortButton from "../components/SortButton.svelte";
+  import Modal, { openModal } from "../components/Modal.svelte";
 </script>
 
 <style>
@@ -74,8 +75,11 @@
     {/each}
   </div>
   <Sidebar>
-    <NewButton>
+    <NewButton func={openModal}>
       <i class="bi bi-blockquote-left"></i> New Thread
     </NewButton>
   </Sidebar>
 </div>
+<Modal>
+  <p>Create Thread Form</p>
+</Modal>
