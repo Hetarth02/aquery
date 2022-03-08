@@ -1,7 +1,9 @@
 <script>
-  import { data } from "../stores.js";
   import Forum from "./Forum.svelte";
-  export let stored_data = undefined;
+  import { data } from "../stores.js";
+
+  let stored_data = undefined;
+
   data.subscribe(value => {
     stored_data = value;
   });

@@ -1,6 +1,7 @@
 <script>
   import Nav from "../components/Nav.svelte";
   import Radar from "../charts/Radar.svelte";
+
   let radar_data = {
     labels: [
       "Eating",

@@ -1,8 +1,10 @@
 <script>
   import Chart from "chart.js/auto";
   import { afterUpdate } from "svelte";
+
   let ctx;
   let myChart;
+
   export let data = {};
   export let options = {
     responsive: true,
@@ -15,6 +17,7 @@
     options: options,
     plugins: plugins
   };
+
   async function createChart() {
     myChart ? await myChart.update() : await (myChart = new Chart(ctx, config));
   }

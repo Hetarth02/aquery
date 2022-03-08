@@ -1,12 +1,15 @@
 <script>
-  import { slide } from "svelte/transition";
   import { user_data } from "../stores.js";
   import { push } from "svelte-spa-router";
+  import { slide } from "svelte/transition";
+
   let toggle = false;
+
   function register_user() {
     // Register user through Api call and if status true then toggle = false
     toggle = false;
   }
+
   function verify_user() {
     // Verify user through Api call and store user data as global prop through stores.js and activate session
     sessionStorage.setItem("name", "active");
@@ -19,6 +22,7 @@
     });
     push("/");
   }
+
   function send_mail() {
     // Send email for forgot password via Api
     alert("Email sent!");

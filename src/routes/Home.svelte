@@ -1,7 +1,16 @@
 <script>
+  import { data } from "../stores.js";
   import Nav from "../components/Nav.svelte";
   import Sidebar from "../components/Sidebar.svelte";
+  import NewButton from "../components/NewButton.svelte";
   import Container from "../components/Container.svelte";
+  import SortButton from "../components/SortButton.svelte";
+
+  let sdata;
+
+  data.subscribe(value => {
+    sdata = value;
+  });
 </script>
 
 <style>
@@ -10,16 +19,23 @@
     display: flex;
     margin: 1rem 0;
   }
-
-  @media (max-width: 500px) {
-    div {
-      flex-direction: column;
-    }
-  }
 </style>
 
 <Nav />
 <div class="cont">
   <Container />
-  <Sidebar />
+  <Sidebar>
+    <NewButton>
+      <i class="bi bi-blockquote-left"></i> New Forum
+    </NewButton>
+    <SortButton func={() => data.set(sdata.sort((a, b) => b.members - a.members))}>
+      <i class="bi bi-stars"></i> Popular Forums
+    </SortButton>
+    <SortButton func={() => data.set(sdata.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()))}>
+      <i class="bi bi-layer-backward"></i> Latest Forums
+    </SortButton>
+    <SortButton func={() => data.set(sdata.sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime()))}>
+      <i class="bi bi-layer-forward"></i> Old Forums
+    </SortButton>
+  </Sidebar>
 </div>

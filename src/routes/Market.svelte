@@ -1,9 +1,11 @@
 <script>
-  import Nav from "../components/Nav.svelte";
   import Bar from "../charts/Bar.svelte";
   import Pie from "../charts/Pie.svelte";
-  import Radar from "../charts/Radar.svelte";
   import Line from "../charts/Line.svelte";
+  import Nav from "../components/Nav.svelte";
+  import Radar from "../charts/Radar.svelte";
+
+  let value = 0;
   let bar_data = {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
     datasets: [
@@ -48,6 +50,7 @@
     data: bar_data,
     options: bar_options
   };
+
   let pie_data = {
     labels: ["Red", "Blue", "Yellow"],
     datasets: [
@@ -71,6 +74,7 @@
     data: pie_data,
     options: pie_options
   };
+
   let radar_data = {
     labels: [
       "Eating",
@@ -107,6 +111,7 @@
     data: radar_data,
     options: radar_options
   };
+
   let line_data = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
     datasets: [
@@ -127,6 +132,7 @@
     data: line_data,
     options: line_options
   };
+
   function myfunc() {
     for (let i = 0; i < 10; i++) {
       line_data.datasets[0].data.push(Math.random() * 100);
@@ -134,7 +140,6 @@
       lineConfig = lineConfig;
     }
   }
-  let value = 0;
 </script>
 
 <style>

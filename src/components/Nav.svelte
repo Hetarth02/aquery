@@ -1,8 +1,9 @@
 <script>
-  import { link, push } from "svelte-spa-router";
   import { user_data } from "../stores.js";
-  let is_logged;
+  import { link, push } from "svelte-spa-router";
+
   let user;
+  let is_logged;
 
   user_data.subscribe(value => {
     user = value;

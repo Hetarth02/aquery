@@ -1,5 +1,6 @@
 <script>
   import { link } from "svelte-spa-router";
+
   export let forum_data = undefined;
 </script>
 
