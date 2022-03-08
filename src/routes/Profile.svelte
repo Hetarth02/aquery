@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Aquery | Profile</title>
+</svelte:head>
+
 <script>
   import Nav from "../components/Nav.svelte";
   import Radar from "../charts/Radar.svelte";

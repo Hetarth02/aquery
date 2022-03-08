@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Aquery | About</title>
+</svelte:head>
+
 <script>
   import Nav from "../components/Nav.svelte";
 </script>

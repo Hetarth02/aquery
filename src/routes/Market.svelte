@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Aquery | Market</title>
+</svelte:head>
+
 <script>
   import Bar from "../charts/Bar.svelte";
   import Pie from "../charts/Pie.svelte";

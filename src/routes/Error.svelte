@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Aquery | Error</title>
+</svelte:head>
+
 <script>
   import { link } from "svelte-spa-router";
   import Nav from "../components/Nav.svelte";

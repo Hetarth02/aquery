@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Aquery | Login</title>
+</svelte:head>
+
 <script>
   import { user_data } from "../stores.js";
   import { push } from "svelte-spa-router";

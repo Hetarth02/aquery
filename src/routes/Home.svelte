@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Aquery | Home</title>
+</svelte:head>
+
 <script>
   import { data } from "../stores.js";
   import Nav from "../components/Nav.svelte";
