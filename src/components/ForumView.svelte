@@ -5,7 +5,14 @@
   import Sidebar from "../components/Sidebar.svelte";
   import NewButton from "../components/NewButton.svelte";
   import SortButton from "../components/SortButton.svelte";
-  import Modal, { openModal } from "../components/Modal.svelte";
+  import Modal, { open_Modal, close_Modal } from "../components/Modal.svelte";
+
+  let thread_form;
+
+  function form_submit() {
+    thread_form.reset();
+    close_Modal();
+  }
 </script>
 
 <style>
@@ -42,6 +49,50 @@
   .title-cont small {
     font-size: 1.9ch;
   }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+  }
+
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin: 0.5rem 0;
+    border-radius: 0.2rem;
+  }
+
+  form textarea {
+    align-self: center;
+  }
+
+  .button-grp {
+    width: 100%;
+    display: flex;
+  }
+
+  button {
+    width: 80%;
+    border: none;
+    outline: none;
+    margin: 1rem;
+    cursor: pointer;
+    padding: 0.6rem;
+    font-size: 1.8ch;
+    border-radius: 5px;
+    transition: ease 300ms;
+    background-color: goldenrod;
+    box-shadow: 0 1px 1px rgb(18 21 26 / 8%);
+  }
+
+  button:hover,
+  button:focus {
+    color: white;
+    background-color: #19072e;
+  }
 </style>
 
 <Nav />
@@ -75,11 +126,31 @@
     {/each}
   </div>
   <Sidebar>
-    <NewButton func={openModal}>
+    <NewButton func={open_Modal}>
       <i class="bi bi-blockquote-left"></i> New Thread
     </NewButton>
   </Sidebar>
 </div>
 <Modal>
-  <p>Create Thread Form</p>
+  <h1>Create New Thread</h1>
+  <form method="post" on:submit|preventDefault={form_submit} bind:this={thread_form}>
+    <input
+      type="text"
+      class="title"
+      name="thread_title"
+      placeholder="Thread Title"
+      required
+    />
+    <textarea
+      name="thread_desc"
+      cols="50"
+      rows="10"
+      placeholder="Thread Description, You can also write in Markdown(Preferred Github flavored Markdown)"
+      required
+    ></textarea>
+    <div class="button-grp">
+      <button type="submit"><i class="bi bi-patch-plus"></i> Create</button>
+      <button type="reset"><i class="bi bi-arrow-clockwise"></i> Clear</button>
+    </div>
+  </form>
 </Modal>

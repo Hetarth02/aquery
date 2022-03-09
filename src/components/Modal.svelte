@@ -1,8 +1,12 @@
 <script context="module">
   let modal;
 
-  export function openModal() {
+  export function open_Modal() {
     modal.style.display = "block";
+  }
+
+  export function close_Modal() {
+    modal.style.display = "none";
   }
 </script>
 
@@ -55,11 +59,11 @@
   }
 </style>
 
-<svelte:window on:click|preventDefault={closeModal}/>
+<svelte:window on:click={closeModal}/>
 
 <div class="modal" bind:this={modal}>
   <div class="modal-cont">
-    <span class="close" on:click|preventDefault={() => modal.style.display = "none"}>&times;</span>
+    <span class="close" on:click={() => modal.style.display = "none"}>&times;</span>
     <slot></slot>
   </div>
 </div>
