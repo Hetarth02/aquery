@@ -1,7 +1,5 @@
 <script>
   import { link } from "svelte-spa-router";
-  import NewButton from "../components/NewButton.svelte";
-  import SortButton from "../components/SortButton.svelte";
 
   export let forum_data = undefined;
 </script>
