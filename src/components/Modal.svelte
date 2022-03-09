@@ -30,7 +30,7 @@
   }
 
   .modal-cont {
-    width: 60%;
+    width: 50%;
     display: flex;
     margin: 0 auto;
     padding: 0.8rem;

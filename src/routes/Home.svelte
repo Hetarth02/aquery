@@ -12,7 +12,6 @@
   import Modal, { openModal } from "../components/Modal.svelte";
 
   let sdata;
-
   data.subscribe(value => {
     sdata = value;
   });
@@ -59,5 +58,5 @@
   </Sidebar>
 </div>
 <Modal>
-  <p>Create Forum Form</p>
+  <h1>Create New Forum</h1>
 </Modal>
