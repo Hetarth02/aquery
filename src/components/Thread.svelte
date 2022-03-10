@@ -119,10 +119,10 @@
 					<span use:tooltip={{content: "Upvote", delay: [1000, null]}}>
 						<button><i class="bi bi-caret-up"></i> 20</button>
 					</span>
-					<span use:tooltip={{content: "Downvote", delay: [1000, null]}}>
+					<span use:tooltip={{content: "Downvote", delay: [1000, null],placement: 'bottom'}}>
 						<button><i class="bi bi-caret-down"></i> 5</button>
 					</span>
-					<span use:tooltip={{content: "Add to Favourites!", delay: [500, null]}}>
+					<span use:tooltip={{content: "Add to Favourites!", delay: [500, null],placement: 'top'}}>
 						<button><i class="bi bi-bookmark-heart"></i></button>
 					</span>
 				</div>
