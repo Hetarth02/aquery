@@ -10,6 +10,7 @@ General Things
 - Add point reward system
 - Gamify User-Website Interaction
 - Add user tagging func.
+- Make Website responsive
 
 Login Page
 
@@ -50,7 +51,7 @@ Profile Page
 
 About Page
 
-- Revamp About Page UI
+- Revamp About Page UI (Done)
 
 Forum Threads View
 
