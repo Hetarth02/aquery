@@ -5,6 +5,7 @@ import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
+// import replace from "@rollup/plugin-replace"; // Enable this import and replace in plugins, this is important for Tippy.js Integration in Rollup.js see FAQ for more info.
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -17,6 +18,15 @@ export default {
     file: "public/bundle.js"
   },
   plugins: [
+    // Tippy.js Integration in Rollup.js see FAQ for more info.
+    // // Production config
+    // replace({
+    //   "process.env.NODE_ENV": JSON.stringify("production")
+    // }),
+    // // OR development config
+    // replace({
+    //   "process.env.NODE_ENV": JSON.stringify("development")
+    // }),
     svelte({
       // enable run-time checks when not in production
       dev: !production,

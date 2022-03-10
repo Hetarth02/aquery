@@ -14,7 +14,8 @@
     interactive: true
   };
 
-  function form_submit() {
+  function tform_submit() {
+    // Create new thread, refresh data, also parse it for Github markdown flavored text
     thread_form.reset();
     close_Modal();
   }
@@ -138,7 +139,7 @@
 </div>
 <Modal>
   <h1>Create New Thread</h1>
-  <form method="post" on:submit|preventDefault={form_submit} bind:this={thread_form}>
+  <form method="post" on:submit|preventDefault={tform_submit} bind:this={thread_form}>
     <input
       type="text"
       class="title"

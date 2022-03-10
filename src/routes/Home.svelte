@@ -18,7 +18,8 @@
     sdata = value;
   });
 
-  function form_submit() {
+  function fform_submit() {
+    // Create new Forum, refresh data, check if it is public or private
     forum_form.reset();
     close_Modal();
   }
@@ -109,7 +110,7 @@
 </div>
 <Modal>
   <h1>Create New Forum</h1>
-  <form method="post" on:submit|preventDefault={form_submit} bind:this={forum_form}>
+  <form method="post" on:submit|preventDefault={fform_submit} bind:this={forum_form}>
     <input
       type="text"
       class="title"
