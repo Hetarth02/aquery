@@ -21,6 +21,11 @@
     font-size: 30ch;
     margin-bottom: 0;
     color: chocolate;
+    background-clip: text;
+    background-color: chocolate;
+    background: radial-gradient(circle at 0 50%, chocolate, #283e63cc 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   div a {
