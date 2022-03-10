@@ -1,4 +1,5 @@
 <script>
+  import tooltip from "../tooltip.js";
   import { link, location } from "svelte-spa-router";
 
   export let i = undefined;
@@ -101,8 +102,8 @@
 					recusandae.
 				</div>
 				<div class="thread-stats">
-					<span><i class="bi bi-eye-fill"></i> 10</span>
-					<span><i class="bi bi-chat-fill"></i> 10</span>
+					<span use:tooltip={{content: "Views", delay: [1000, null]}}><i class="bi bi-eye-fill"></i> 10</span>
+					<span use:tooltip={{content: "Comments", delay: [1000, null]}}><i class="bi bi-chat-fill"></i> 10</span>
 				</div>
 			</div>
 			<div class="thread-content-row">
@@ -115,13 +116,13 @@
 			<div class="thread-row thread-row-last">
 				<h3>Author posted on 01/01/2000</h3>
 				<div class="icon-cont">
-					<span>
+					<span use:tooltip={{content: "Upvote", delay: [1000, null]}}>
 						<button><i class="bi bi-caret-up"></i> 20</button>
 					</span>
-					<span>
+					<span use:tooltip={{content: "Downvote", delay: [1000, null]}}>
 						<button><i class="bi bi-caret-down"></i> 5</button>
 					</span>
-					<span>
+					<span use:tooltip={{content: "Add to Favourites!", delay: [500, null]}}>
 						<button><i class="bi bi-bookmark-heart"></i></button>
 					</span>
 				</div>

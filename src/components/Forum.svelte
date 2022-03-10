@@ -1,7 +1,13 @@
 <script>
+  import tooltip from "../tooltip.js";
   import { link } from "svelte-spa-router";
 
   export let forum_data = undefined;
+
+  let props = {
+    content: "No. of People who are following this forum.",
+    interactive: true
+  };
 </script>
 
 <style>
@@ -46,7 +52,7 @@
   <div class="forum">
     <div class="title-cont">
       <h1>{forum_data.title}</h1>
-      <small><i class="bi bi-people-fill"></i> {forum_data.members}</small>
+      <small use:tooltip={props}><i class="bi bi-people-fill"></i> {forum_data.members}</small>
     </div>
     <small><b>By {forum_data.author}</b> on {forum_data.created_at}</small>
     <p>

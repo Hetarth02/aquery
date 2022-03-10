@@ -1,4 +1,5 @@
 <script>
+  import tooltip from "../tooltip.js";
   import Nav from "../components/Nav.svelte";
   import Thread from "../components/Thread.svelte";
   import { link, location } from "svelte-spa-router";
@@ -8,6 +9,10 @@
   import Modal, { open_Modal, close_Modal } from "../components/Modal.svelte";
 
   let thread_form;
+  let props = {
+    content: "No. of People who are following this forum.",
+    interactive: true
+  };
 
   function form_submit() {
     thread_form.reset();
@@ -101,7 +106,7 @@
     <div class="forum-content">
       <div class="title-cont">
         <h1>Title</h1>
-        <small><i class="bi bi-people-fill"></i> 100</small>
+        <small use:tooltip={props}><i class="bi bi-people-fill"></i> 100</small>
       </div>
       <h5>By Aquery</h5>
       <p>01/01/2022</p>
