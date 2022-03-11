@@ -1,8 +1,8 @@
 <script>
   import tooltip from "../tooltip.js";
+  import { link } from "svelte-spa-router";
   import Nav from "../components/Nav.svelte";
   import Thread from "../components/Thread.svelte";
-  import { link, location } from "svelte-spa-router";
   import Sidebar from "../components/Sidebar.svelte";
   import NewButton from "../components/NewButton.svelte";
   import SortButton from "../components/SortButton.svelte";
@@ -118,7 +118,7 @@
 </style>
 
 <Nav />
-<h1 class="nav-heading"> <a href="/" use:link>Home</a> <i class="bi bi-chevron-right"></i> Title</h1>
+<h1 class="nav-heading"><a href="/" use:link>Home</a> <i class="bi bi-chevron-right"></i> Title</h1>
 <div class="cont">
   <div class="thread-cont">
     {#each {length: 10} as _,i}

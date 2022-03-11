@@ -55,12 +55,12 @@ About Page
 
 Forum Threads View
 
-- Add share func. for individual threads
 - Add different filters(Solved, Unsolved, Latest, Oldest, Most Comments, Most Popular[By upvotes])
 - Add Pagination
 
 Thread View
 
 - Select comment as Best Answer(This will make thread status solved)
+- Add share func. for individual threads
 - Add upvotes and downvotes for comments
 - Add Pagination for comments
