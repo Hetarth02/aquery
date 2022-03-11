@@ -9,6 +9,8 @@
   import Modal, { open_Modal, close_Modal } from "../components/Modal.svelte";
 
   let thread_form;
+  let thread_title = undefined;
+  let thread_desc = undefined;
   let props = {
     content: "No. of People who are following this forum.",
     interactive: true
@@ -160,6 +162,7 @@
       class="title"
       name="thread_title"
       placeholder="Thread Title"
+      bind:value={thread_title}
       required
     />
     <textarea
@@ -167,6 +170,7 @@
       cols="50"
       rows="10"
       placeholder="Thread Description, You can also write in Markdown(Preferred Github flavored Markdown)"
+      bind:value={thread_desc}
       required
     ></textarea>
     <div class="button-grp">

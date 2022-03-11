@@ -8,6 +8,11 @@
   import { slide } from "svelte/transition";
 
   let toggle = false;
+  let email = undefined;
+  let username = undefined;
+  let password = undefined;
+  let login_username = undefined;
+  let login_password = undefined;
 
   function register_user() {
     // Register user through Api call and if status true then toggle = false
@@ -16,8 +21,8 @@
 
   function verify_user() {
     // Verify user through Api call and store user data as global prop through stores.js and activate session
-    sessionStorage.setItem("name", "active");
-    sessionStorage.setItem("password", "active");
+    sessionStorage.setItem("name", login_username);
+    sessionStorage.setItem("password", login_password);
     sessionStorage.setItem("is_logged", true);
     user_data.set({
       name: sessionStorage.getItem("name"),
@@ -193,17 +198,17 @@
           <h3 class="label">Your Email</h3>
           <div class="input-cont">
             <div class="icon"><i class="bi bi-envelope-fill"></i></div>
-            <input type="email" name="email" placeholder="abc@email.com" required/>
+            <input type="email" name="email" placeholder="abc@email.com" bind:value={email} required/>
           </div>
           <h3 class="label">Your Username</h3>
           <div class="input-cont">
             <div class="icon"><i class="bi bi-hash"></i></div>
-            <input type="text" name="text" placeholder="username" required/>
+            <input type="text" name="text" placeholder="username" bind:value={username} required/>
           </div>
           <h3 class="label">Your Password</h3>
           <div class="input-cont">
             <div class="icon"><i class="bi bi-shield-lock-fill"></i></div>
-            <input type="password" name="password" placeholder="password" required/>
+            <input type="password" name="password" placeholder="password" bind:value={password} required/>
           </div>
           <button type="submit" class="submit">Start your Journey!</button>
         </form>
@@ -222,12 +227,12 @@
           <h3 class="label">Your Username</h3>
           <div class="input-cont">
             <div class="icon"><i class="bi bi-hash"></i></div>
-            <input type="text" name="text" placeholder="username" required/>
+            <input type="text" name="text" placeholder="username" bind:value={login_username} required/>
           </div>
           <h3 class="label">Your Password</h3>
           <div class="input-cont">
             <div class="icon"><i class="bi bi-shield-lock-fill"></i></div>
-            <input type="password" name="password" placeholder="password" required/>
+            <input type="password" name="password" placeholder="password" bind:value={login_password} required/>
           </div>
           <button type="submit" class="submit">Continue your Journey!</button>
         </form>
