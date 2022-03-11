@@ -43,6 +43,7 @@ Profile Page
 
 - Update Profile Page UI
 - Add level Bar
+- Add daily activity time graph
 - Add follows, following, bookmarks
 - Add activity history(Liked,Disliked threads)
 - Notify when tagged somewhere
@@ -64,3 +65,78 @@ Thread View
 - Add share func. for individual threads
 - Add upvotes and downvotes for comments
 - Add Pagination for comments
+
+# Backend Design Approximations
+
+```js
+// User Account Create
+{
+  email, username, password, date;
+}
+
+// User SignIn
+{
+  username, password, (elapsed_time = [time_of_sign_in, time_of_sign_out]);
+}
+
+// Forum
+{
+  forum_id, title, desc, (type = [public, private]), author, date, members;
+}
+
+// Thread
+{
+  thread_id,
+    title,
+    desc,
+    author,
+    date,
+    upvotes,
+    downvotes,
+    views,
+    comments,
+    (solved = [boolean]);
+}
+
+// Thread Comments
+{
+  thread_comment_id,
+    desc,
+    author,
+    date,
+    upvotes,
+    downvotes,
+    (is_solution = [boolean]);
+}
+
+// User Profile
+{
+  email,
+    username,
+    xp,
+    level,
+    Qcoins,
+    unlocked_items_from_market,
+    comments,
+    threads,
+    subscriptions,
+    (achivements = [achieved, remaining]),
+    (forums = [public_created, private_created]);
+}
+
+// Market
+{
+  total_users,
+    total_forums,
+    total_threads,
+    total_users_signed_up_today,
+    total_users_signed_out_today,
+    past_conversion_rate,
+    current_conversion_rate,
+    future_conversion_rate,
+    market_items;
+}
+
+// User Account, Forums, Thread, Comment Create and Delete Ops only
+// User Account CRUD Ops
+```
