@@ -35,7 +35,6 @@
     gap: 1rem;
     display: flex;
     margin: 1rem 0;
-    /* justify-content: space-evenly; */
   }
 
   .flex-contents {
