@@ -46,8 +46,8 @@
 	  height: fit-content;
 	  background-clip: text;
 	  text-decoration: underline;
-	  text-decoration-color: burlywood;
-	  background: radial-gradient(circle at 0 2%, #283e63cc, burlywood 80%);
+	  text-decoration-color: #e91e63;
+	  background: radial-gradient(circle at 0% 0%, #e91e63, burlywood 100%);
 	  -webkit-background-clip: text;
 	  -webkit-text-fill-color: transparent;
 	}
@@ -65,13 +65,13 @@
 	}
 
 	.square {
-	  color: aqua;
+	  color: white;
 	  height: 18rem;
 	  margin: 1rem 0;
 	  padding: 1rem 0;
 	  border-radius: 1rem;
 	  transition: ease 1s;
-	  background-color: rgb(237 20 61 / 80%);
+	  background-color: crimson;
 	}
 
 	.square h1 {

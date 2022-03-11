@@ -32,8 +32,15 @@
 
   .large-device {
     display: block;
+    transition: ease 1s;
+    background-size: 300%;
+    background-position: left;
     background-color: burlywood;
-    background-image: radial-gradient(circle at 0 2%, #283e63cc, burlywood 99%);
+    background-image: radial-gradient(circle at 120% 0%, #000000 2%, #ce0648 95%);
+  }
+
+  .large-device a {
+    color: white;
   }
 
   .nav {
@@ -44,18 +51,21 @@
   }
 
   .nav a {
-    color: black;
     font-size: 2ch;
     padding: 0.7rem;
     text-decoration: none;
-    border-bottom: 2px solid transparent;
+    border-bottom: 3px solid transparent;
+  }
+
+  .large-device:hover {
+    outline: none;
+    background-position: right;
   }
 
   .nav a:hover,
   .nav a:focus {
     outline: none;
-    color: white;
-    border-bottom: 2px solid white;
+    border-bottom: 3px solid white;
   }
 </style>
 

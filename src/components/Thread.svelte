@@ -53,6 +53,10 @@
     font-size: 2.1ch;
     font-weight: bold;
     margin-bottom: 0.5rem;
+    width: 50rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .thread-stats {
@@ -67,6 +71,14 @@
   .thread-content-row {
     font-size: 1.8ch;
     margin-bottom: 0.3rem;
+  }
+
+  .thread-content-row p {
+    width: 65rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 1rem 1rem 1rem 0;
   }
 
   .thread-row-last {
@@ -108,9 +120,7 @@
 			</div>
 			<div class="thread-content-row">
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-					iure beatae numquam? Asperiores ipsam obcaecati eaque dolorum
-					dolores id facilis?
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. At culpa qui laborum blanditiis labore minus sed numquam adipisci, ducimus molestias consequuntur asperiores nostrum laudantium nulla rem perspiciatis nobis voluptatum enim?
 				</p>
 			</div>
 			<div class="thread-row thread-row-last">

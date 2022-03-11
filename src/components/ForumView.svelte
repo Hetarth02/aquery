@@ -22,10 +22,26 @@
 </script>
 
 <style>
+  .nav-heading {
+    padding: 1rem;
+    margin-left: 1rem;
+  }
+
+  .nav-heading a {
+    color: #000000aa;
+    text-decoration: none;
+  }
+
+  .nav-heading a:hover,
+  .nav-heading a:focus {
+    text-decoration: underline;
+  }
+
   .cont {
     gap: 1rem;
     margin: 1rem 0;
     display: flex;
+    justify-content: space-evenly;
   }
 
   .forum-content {
@@ -102,8 +118,26 @@
 </style>
 
 <Nav />
+<h1 class="nav-heading"> <a href="/" use:link>Home</a> <i class="bi bi-chevron-right"></i> Title</h1>
 <div class="cont">
+  <div class="thread-cont">
+    {#each {length: 10} as _,i}
+      <Thread {i}/>
+    {/each}
+  </div>
   <Sidebar>
+    <NewButton func={open_Modal}>
+      <i class="bi bi-blockquote-left"></i> New Thread
+    </NewButton>
+    <SortButton>
+      <i class="bi bi-stars"></i> Popular Threads
+    </SortButton>
+    <SortButton>
+      <i class="bi bi-layer-backward"></i> Latest Threads
+    </SortButton>
+    <SortButton>
+      <i class="bi bi-layer-forward"></i> Old Threads
+    </SortButton>
     <div class="forum-content">
       <div class="title-cont">
         <h1>Title</h1>
@@ -116,25 +150,6 @@
         in possimus est!
       </p>
     </div>
-    <SortButton>
-      <i class="bi bi-stars"></i> Popular Forums
-    </SortButton>
-    <SortButton>
-      <i class="bi bi-layer-backward"></i> Latest Forums
-    </SortButton>
-    <SortButton>
-      <i class="bi bi-layer-forward"></i> Old Forums
-    </SortButton>
-  </Sidebar>
-  <div class="thread-cont">
-    {#each {length: 10} as _,i}
-      <Thread {i}/>
-    {/each}
-  </div>
-  <Sidebar>
-    <NewButton func={open_Modal}>
-      <i class="bi bi-blockquote-left"></i> New Thread
-    </NewButton>
   </Sidebar>
 </div>
 <Modal>

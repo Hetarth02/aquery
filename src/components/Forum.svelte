@@ -27,14 +27,15 @@
     flex-direction: column;
     transition: ease 1s;
     background-size: 200%;
-    background-position: right;
-    background-image: linear-gradient(315deg, burlywood, darkturquoise 60%);
+    background-position: left;
+    background-image: linear-gradient(315deg, burlywood, paleturquoise);
   }
 
   .forum:hover,
   .forum:focus {
     outline: none;
-    background-position: left;
+    background-size: 150%;
+    background-position: right;
   }
 
   .title-cont {
