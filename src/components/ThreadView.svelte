@@ -38,7 +38,7 @@
   }
 
   .flex-contents {
-    width: 15%;
+    width: 20%;
   }
 
   .form-contents {
@@ -186,7 +186,7 @@
 
 <Nav />
 
-<h1 class="nav-heading"><a href="/forum/1">Title</a> <i class="bi bi-chevron-right"></i> Question</h1>
+<h1 class="nav-heading"><a href="/forum/1" use:link>Title</a> <i class="bi bi-chevron-right"></i> Question</h1>
 
 <div class="cont">
   <div class="flex-contents">
